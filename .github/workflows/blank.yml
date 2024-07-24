@@ -33,8 +33,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: 
-          mkdir OLA
+          echo ${{ secrets.PG_Pass }} > chave.pem
+          chmod 600 chave.pm
           ls -all
+          cat chave.pem
           
           echo Add other actions to build,
           echo test, and deploy your project.
